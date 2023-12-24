@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clap Key🔐</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="hero-background"></div>
+    <div id="generator">
+        <h1>Получите ключ ниже🔑:</h1>
+        <button id="generateButton">Получить ключ🔑</button>
+        <div id="keyDisplay"></div>
+
+        <script>
+            const allowedKeys = [
+                'p7644cbj9r42k42dvum4',
+                '84c4jb46zrx676hbf9x4',
+                'c425btsva9yi4m27j347',
+                '8pkt347235yr2jsis7r7',
+                '3559jnt7kkhe7yj49d45',
+                '388ke8z2hyh5ns596v2g',
+                'pm9z94y33mv3uy6d843r',
+                'tab7j497p7u8fx8t8s73',
+                '8yj28m82ahd2j9sn5g22',
+                '5t8bn496e9797rb8ssag',
+                '4k5n5sba97p72j33jf3g',
+                '86v55te8943d6pbc6uzv',
+                'vvy3b8k5th9p9g6968n6',
+                '958ie656ze87vrjd23sp',
+                '6kzvc3y8u5yf4x575d82',
+                '38bu8njtb352n7d42f4p',
+                'i9783x4kgkuc5p2752xd',
+                'ab36vh84gpiv58kj8673',
+                '8i29i9rj62c938z2iuzi',
+                'te6632k2ge9ix2cy32i2',
+                '879ttrz79dg68sj5s38n',
+                'y9u44u8x7i75my5ag2s5',
+                '8rgr9fz6522dph2b4i47',
+                '82f4g28it37s7ckm3yg7',
+                'j27ufj5uv585z2ap773g',
+                'j99622c5az3tpc36mk3u'
+            ];
+
+            let lastGeneratedTime = 0;
+
+            document.getElementById('generateButton').addEventListener('click', function() {
+                const currentTime = new Date().getTime();
+                const timeDiff = currentTime - lastGeneratedTime;
+                
+                if (timeDiff >= 120000) { // 120000 миллисекунд = 2 минуты
+                    const key = allowedKeys[Math.floor(Math.random() * allowedKeys.length)];
+                    document.getElementById('keyDisplay').innerHTML = '<strong>Ваш ключ🔑💳:</strong> ' + key;
+                    lastGeneratedTime = currentTime;
+                } else {
+                    alert('Вы можете получить ключ только 1 раз!!.');
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
